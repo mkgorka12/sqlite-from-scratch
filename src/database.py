@@ -1,3 +1,6 @@
+PAGE_SIZE_OFFSET = 16
+
+
 class Database():
     def __init__(self, path):
         self.path = path
@@ -5,8 +8,8 @@ class Database():
         self.f = None
         self.page_size = None
 
-    def __get_page_size(self):
-        self.f.seek(16)
+    def _get_page_size(self):
+        self.f.seek(PAGE_SIZE_OFFSET)
 
         page_size = self.f.read(2)
         page_size = int.from_bytes(page_size, 'big')
@@ -14,12 +17,9 @@ class Database():
         return page_size
 
     def __enter__(self):
-        try:
-            self.f = open(self.path, "rb")
-        except Exception as e:
-            raise RuntimeError("Cannot open .db file:", e)
+        self.f = open(self.path, "rb")
 
-        self.page_size = self.__get_page_size()
+        self.page_size = self._get_page_size()
 
         return self
 
