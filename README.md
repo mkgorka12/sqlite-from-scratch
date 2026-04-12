@@ -12,6 +12,9 @@ I didn't use their unit tests because they're paid, however I still find it as a
 
 ## Quickstart
 Thanks to the mentioned Pytest running tests is extremely easy.
+Open terminal in an unzipped repository:
+
+```pip install pytest```
 
 ```pytest test_main.py```
 
@@ -20,11 +23,11 @@ Thanks to the mentioned Pytest running tests is extremely easy.
 - [Chinook sqlite database](https://github.com/lerocha/chinook-database/tree/master?tab=License-1-ov-file)
 
 ## To-Do
-- [ DONE ] Print page size
-- [      ] Print object names
-- [      ] Count rows in a table
-- [      ] Read data from a single column
-- [      ] Read data from multiple columns
-- [      ] Filter data with a WHERE clause
-- [      ] Retrieve data using a full-table scan
-- [      ] Retrieve data using an index
+- [REFACTORED] Print page size
+- [GREEN]      Print object names
+- Count rows in a table
+- Read data from a single column
+- Read data from multiple columns
+- Filter data with a WHERE clause
+- Retrieve data using a full-table scan
+- Retrieve data using an index
