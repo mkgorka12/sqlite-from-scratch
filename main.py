@@ -1,4 +1,5 @@
-from src.database import Database
+from src.database.database import Database
 
 with Database("Chinook_Sqlite.sqlite") as db:
-    print(db.object_names)
+    page_content = db.get_page_content(1)
+    print(page_content)
